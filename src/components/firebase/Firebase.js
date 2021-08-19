@@ -1,15 +1,24 @@
- import firebase from "firebase";
+import firebase from "firebase";
 
- var firebaseConfig = {
-    apiKey: "AIzaSyBDnPNKGncbsjlMSDWVfHsnsLyNtv8Dp3M",
-    authDomain: "kolay-wms.firebaseapp.com",
-    projectId: "kolay-wms",
-    storageBucket: "kolay-wms.appspot.com",
-    messagingSenderId: "148012246114",
-    appId: "1:148012246114:web:a107143c20b14777f59d3b"
-  };
+const firebaseConfig = {
 
+  apiKey: "AIzaSyAZmqXmobhdnYtfg2G1uqfEdM5qDAfh3Ho",
 
- const fire = firebase.initializeApp(firebaseConfig);
+  authDomain: "kolaywms-951a1.firebaseapp.com",
 
- export default fire;
+  projectId: "kolaywms-951a1",
+
+  storageBucket: "kolaywms-951a1.appspot.com",
+
+  messagingSenderId: "194600080075",
+
+  appId: "1:194600080075:web:9a7a54b651c2269d34414e"
+
+};
+
+const fire = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+export {auth , provider};
+export default fire;
