@@ -1,8 +1,7 @@
 import React from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { GoogleLoginButton } from "react-social-login-buttons";
-import welcome from "../images/welcome.png";
-import { auth, provider} from '../firebase/Firebase.js';
+import { auth, provider } from "../firebase/Firebase.js";
 import "./Login.css";
 
 const Login = (props) => {
@@ -19,23 +18,21 @@ const Login = (props) => {
     passwordError,
   } = props;
 
-  const signIn = () =>{
-    auth.signInWithPopup(provider).catch((err) =>{
-        alert(err.message)
-    })
-}
+  const signIn = () => {
+    auth.signInWithPopup(provider).catch((err) => {
+      alert(err.message);
+    });
+  };
 
   return (
     <section className="login">
-      {/* <div id="background-img" class="background-img">
-        <img src={welcome} />
-      </div> */}
       <Form className="login-form">
         <div>
           <h1 className="text-center pt-3 font-weight-bold">KolayWMS</h1>
         </div>
         <FormGroup>
           <Input
+            className="input"
             type="text"
             autoFocus
             required
@@ -47,6 +44,7 @@ const Login = (props) => {
         </FormGroup>
         <FormGroup>
           <Input
+            className="input"
             type="password"
             required
             value={password}
@@ -77,7 +75,7 @@ const Login = (props) => {
                 Sign up
               </Button>
               <p className="text-center pt-1">
-                Have an account ? 
+                Have an account ?
                 <span
                   className="use-button"
                   onClick={() => setHasAccount(!hasAccount)}
